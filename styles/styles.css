@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-image: url("../img/Main_background.JPG");
+  background-size: cover;
+}
+
+h1, h2 {
+  margin: 0.2rem 0;
+  background-color: RGBa(255,255,255, 0.6);
+  border-radius: 2rem;
+  text-align: center;
+}
+
+h1 {
+  width: 20rem;
+}
+
+h2 {
+  width: 12rem;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+h1, h2, h3 { 
+  user-select: none;
+}
+
+h3 {
+  font-size: 0.8rem;
+}
+
+.eng {
+  margin-top: .2rem;
+}
+
+.kr {
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+header {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 1rem;
+  left: 40%;
+}
+
+#timer-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 2rem;
+  right: 2rem;
+  background-color: RGBa(255,255,255, 0.8);
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+}
+
+img {
+  border-radius: 1rem;
+  margin: 0.2rem;
+  border: 1px solid whitesmoke;
+  user-select: none;
+}
+
+section {
+  position: absolute;
+  left : 0.2rem;
+  padding: 0.2rem;
+  text-align: center;;
+}
+
+#game-themes div {
+  background-color: RGBa(255,255,255, 0.5);
+  border-radius: 1rem;
+  margin: 0.2rem;
+}
+
+#pick-theme {
+  border: 1px solid transparent;
+}
+
+#pick-theme * {
+  width: 10rem;
+}
+
+#pick-theme:hover {
+  border: 1px dashed black;
+}
+
+#pick-theme:active {
+  background-color: white;
+  border-style: solid;
+}
+
+#pick-theme.selected {
+  background-color: white;
+}
+
+#boards-game {
+  background-color: RGBa(255,255,255, 0.5);
+  position: absolute;
+  top: 10rem;
+  bottom: 0.5rem;
+  left: 12rem;
+  min-height: 80%;
+  min-width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+#boards-game .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#start {
+  padding: 2rem 5rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px rgb(81, 76, 76);
+  font-size: 1rem;
+}
+
+#kr {
+  font-size: 1.2rem;
+}
+
+.kr2 {
+  font-size: 0.9rem;
+}
+
+.card {
+  display: inline-block;
+  perspective: 300px;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.turned {
+  pointer-events: none;
+}
+
+.card.turned .front {
+  transform: rotateY(0deg);
+}
+.card.turned .back {
+  transform: rotateY(180deg);
+}
+
+.card .back,
+.card .front {
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 64px;
+  transition: transform 0.6s ease;
+}
+
+.card .back {
+  background-image: url(../img/flag_1.png);
+  border-radius: 1rem;
+}
+
+.card .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateY(-180deg) translateZ(1px);
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}

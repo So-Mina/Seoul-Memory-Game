@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+<script src="./js/app.js" type="module"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+  <title>Seoul Memory Game</title>
+</head>
+
+<body>
+  <header>
+    <div id="container">
+    <div class="titles">
+      <h1>Seoul Memory Game</h1>
+      <h2>서울 기억력 게임</h2>
+      <!-- <audio controls src="/Traditional Korean Music .mp3" loop></audio> -->
+    </div>
+  </header>
+
+  <div id="timer-panel">
+    <span>Time left :<hr></span>
+      <hr><span class="kr kr2">남은 시간 :</span>
+    <span class="timer-count">00</span>
+  </div>
+
+  <div id="boards-game">
+    <button id="start">Start Game <hr> 
+      <span id="kr" class="kr">게임을 시작하다</span></button>
+  </div>
+
+
+  <dialog class="win">
+    <p>Well done!</p>
+    <button>try another one</button>
+  </dialog>
+
+  <dialog class="lost">
+    <p>Game over!</p>
+    <button>try again!</button>
+  </dialog>
+
+</div>
+
+
+  <section id="game-themes">
+    <div id="pick-theme" class="bukchon">
+      <h3 class="eng">Bukchon Hanok Village</h3>
+      <h3 class="kr">북촌한옥마을</h3>
+      <img src="./img/Bukchon bg.JPG">
+    </div>
+
+    <div id="pick-theme" class="yongmaland">
+      <h3 class="eng">Yongmaland</h3>
+      <h3 class="kr">용마랜드</h3>
+      <img src="./img/Yongmaland bg.JPG">
+    </div>
+
+    <div id="pick-theme" class="gyeongbokgung">
+      <h3 class="eng">Gyeongbokgung Palace</h3>
+      <h3 class="kr">경복궁</h3>
+      <img src="./img/Gyeongbokgung bg.JPG">
+    </div>
+
+    <div id="pick-theme" class="visits">
+      <h3 class="eng">Random Visits</h3>
+      <h3 class="kr">무작위 방문</h3>
+      <img src="./img/Visits bg.jpg">
+    </div>
+
+    <div id="pick-theme" class="streets-night">
+      <h3 class="eng">Streets at Night</h3>
+      <h3 class="kr">밤의 거리</h3>
+      <img src="./img/Streets night bg.JPG">
+    </div>
+  </section>
+
+ 
+
+</body>
+</html>
