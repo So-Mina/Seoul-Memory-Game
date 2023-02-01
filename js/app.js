@@ -4,6 +4,7 @@ let gyeongbokgungTheme = document.querySelector('.gyeongbokgung')
 let yongmalandTheme = document.querySelector('.yongmaland')
 let bukchonTheme = document.querySelector('.bukchon')
 
+const bgMusic = document.getElementById('background-music')
 const startButton = document.getElementById('start')
 const winnerDialog = document.querySelector('#winner');
 const loserDialog = document.querySelector('#loser');
@@ -16,6 +17,7 @@ let memoryGame = null
 let gameHasStarted = false;
 
 startButton.addEventListener('click', () => {
+  bgMusic.play()
   gameHasStarted = true;
   memoryGame = new MemoryGame(pickedTheme)
   memoryGame.shuffleCards()
