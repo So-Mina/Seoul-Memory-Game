@@ -2,6 +2,7 @@ export default class MemoryGame {
   constructor(cards) {
     this.cards = cards,
     this.pickedCards = []
+    this.pairsGuessed = 0
   }
 
   shuffleCards() {
@@ -29,7 +30,7 @@ export default class MemoryGame {
   }
 
   checkIfFinished() {
-    if (this.pairsGuessed === (this.cards.length / 2)) {
+    if (this.pairsGuessed === 15) {
       return true
       } else {
       return false

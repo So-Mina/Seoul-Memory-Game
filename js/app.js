@@ -5,21 +5,33 @@ let yongmalandTheme = document.querySelector('.yongmaland')
 let bukchonTheme = document.querySelector('.bukchon')
 
 const startButton = document.getElementById('start')
-
-
+const winnerDialog = document.querySelector('#winner');
+const loserDialog = document.querySelector('#loser');
 
 import {cardsBukchon, cardsGyeongbokgung, cardsStreetsNight, cardsVisits, cardsYongmaland} from './data.js'
 import MemoryGame from './MemoryGame.js'
 
-
-
 let pickedTheme = null
 let memoryGame = null
-
+let gameHasStarted = false;
 
 startButton.addEventListener('click', () => {
+  gameHasStarted = true;
   memoryGame = new MemoryGame(pickedTheme)
   memoryGame.shuffleCards()
+
+  let counter = 90;
+  let timerElement = document.querySelector(".timer-count");
+
+  const timer = setInterval(function() {
+    counter--
+    timerElement.innerHTML = counter
+
+    if (counter === 0) {
+      clearInterval(timer)
+        loserDialog.showModal()
+    } 
+  }, 1000);
 
 
   let html = '';
@@ -55,44 +67,46 @@ startButton.addEventListener('click', () => {
           memoryGame.pickedCards = []
         }
       }
-
+      
       if (memoryGame.checkIfFinished()) {
-        setTimeout(() => {
-          location.reload()
-        }, 400)
+          clearInterval(timer)
+            winnerDialog.showModal()
       }
 
     });
   });
 })
 
-
-
   bukchonTheme.addEventListener('click', (event) => {
+    if (gameHasStarted) return
     pickedTheme = cardsBukchon
     unselectAll()
     bukchonTheme.classList.add('selected')
   })
 
   yongmalandTheme.addEventListener('click', (event) => {
+    if (gameHasStarted) return
     pickedTheme = cardsYongmaland
     unselectAll()
     yongmalandTheme.classList.add('selected')
   })
 
   gyeongbokgungTheme.addEventListener('click', (event) => {
+    if (gameHasStarted) return
     pickedTheme = cardsGyeongbokgung
     unselectAll()
     gyeongbokgungTheme.classList.add('selected')
   })
 
   visitsTheme.addEventListener('click', (event) => {
+    if (gameHasStarted) return
     pickedTheme = cardsVisits
     unselectAll()
     visitsTheme.classList.add('selected')
   })
 
   streetsNightTheme.addEventListener('click', (event) => {
+    if (gameHasStarted) return
     pickedTheme = cardsStreetsNight
     unselectAll()
     streetsNightTheme.classList.add('selected')
@@ -105,4 +119,15 @@ function unselectAll(){
     element.classList.remove('selected')
   })
 }
+
+document.querySelector('#winner .close').addEventListener('click', function() {
+  winnerDialog.close()
+  location.reload()
+});
+
+document.querySelector('#loser .close').addEventListener('click', function() {
+  loserDialog.close()
+  location.reload()
+});
+  
 

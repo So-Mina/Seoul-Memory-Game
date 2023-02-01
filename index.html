@@ -14,39 +14,25 @@
 </head>
 
 <body>
-  <header>
-    <div id="container">
     <div class="titles">
-      <h1>Seoul Memory Game</h1>
-      <h2>서울 기억력 게임</h2>
-      <!-- <audio controls src="/Traditional Korean Music .mp3" loop></audio> -->
-    </div>
-  </header>
+       <h1>Seoul Memory Game</h1>
+       <h2>서울 기억력 게임</h2>
+     </div>
+     
+     <audio loop autoplay>
+       <source src="./Traditional_Korean_Music .mp3" type="audio/mpeg">
+     </audio>
 
-  <div id="timer-panel">
-    <span>Time left :<hr></span>
-      <hr><span class="kr kr2">남은 시간 :</span>
-    <span class="timer-count">00</span>
-  </div>
+     <div id="timer-panel">
+       <span>Time left :<hr></span>
+         <hr><span class="kr kr2">남은 시간 :</span>
+       <span class="timer-count">90</span>
+    </div>
 
   <div id="boards-game">
     <button id="start">Start Game <hr> 
-      <span id="kr" class="kr">게임을 시작하다</span></button>
+      <span id="kr" class="kr">게임 시작</span></button>
   </div>
-
-
-  <dialog class="win">
-    <p>Well done!</p>
-    <button>try another one</button>
-  </dialog>
-
-  <dialog class="lost">
-    <p>Game over!</p>
-    <button>try again!</button>
-  </dialog>
-
-</div>
-
 
   <section id="game-themes">
     <div id="pick-theme" class="bukchon">
@@ -80,7 +66,17 @@
     </div>
   </section>
 
- 
+  <dialog id="winner">
+    <p>Well done!</p>
+    <hr><span class="kr kr2">수고했어 !</span>
+    <button class="close">close</button>
+  </dialog>
+
+  <dialog id="loser">
+    <p>Game over!</p>
+    <hr><span class="kr kr2">게임 오버 !</span>
+    <br><button class="close">close</button>
+  </dialog>
 
 </body>
 </html>
