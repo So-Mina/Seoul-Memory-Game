@@ -4,7 +4,7 @@
 Take a quick tour to Seoul with this matching memory cards game. Find the pairs before the timer is up.
 
 ## Installation
-* No installation needed, this game run on your browser.
+* No installation needed, this game run in your browser.
 
 ## Features
 * 5 different themes.
